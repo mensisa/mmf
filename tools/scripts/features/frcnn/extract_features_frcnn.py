@@ -32,8 +32,8 @@ class FeatureExtractor:
         + "frcnn-vg-finetuned/config.yaml"
     }
 
-    def __init__(self):
-        self.args = self.get_parser().parse_args()
+    def __init__(self, raw_args=None):
+        self.args = self.get_parser().parse_args(raw_args)
         self.frcnn, self.frcnn_cfg = self._build_detection_model()
 
     def get_parser(self):
